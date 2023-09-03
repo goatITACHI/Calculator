@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0%;
+    }
+    .display{
+        background-position:right;
+        color:black;
+        text-align: center;
+    }
+    .box1{
+        background: rgb(6, 6, 5);
+        margin:50px;
+        height: px;
+        width: 533px;
+        border:3px  solid black ;
+        border-radius: 50px;
+        width: 600px; 
+     
+
+    }
+    .box2{
+        background-color: rgb(234, 237, 237);
+       margin:30px; 
+        /* height: 50px; */
+        padding:30px;
+        width: 90% ;
+       border:5px  solid rgb(10, 5, 5);
+       border-radius: 10px;
+        box-sizing:border-box;
+        background-position: center;
+        
+    }
+    .box2 input{
+        width: 98%;
+        height: 90px;
+        padding: ;
+        margin: ;
+        font-size: 30px;
+    }
+    .box0{
+        background-color: rgb(16, 68, 47);  
+        margin:40px;
+        height: 10px;
+        padding:30px;
+        width: 150px;
+        border:3px  solid rgb(10, 5, 5);
+        border-radius: 10px;
+    }
+    .container6{
+        color: aliceblue;
+        text-align: right;
+    }
+    .button{
+        padding: 30px;
+        margin:  10px 37px;
+        border: 2px solid black;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+    .row{
+        margin: 8px 0;
+
+    }
+    .container5
+    {
+        display: flex;
+        text-align: center;
+    }
+
+
+</style>
+<body>
+    <div class="box1">
+        <div class="space"><br>
+            <div class="space"><br></div>
+        </div>
+        <div class="container5">
+        <div class="box0">
+        </div>
+        <div class="container6"><h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CASIO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fx-991ES PLUS&nbsp;&nbsp;&nbsp;<BR>
+            <i>NATURAL-U.P.A.M.</i><h1></div>
+
+    </div>
+        <div class="box2">
+            <input class="input" type="text"/>
+        </div>
+        <div class="space"><br></div>
+       
+           <div class="container">
+            <div class="row">
+                <button class="button">(</button>
+                <button class="button">)</button>
+                <button class="button">%</button>
+                <button class="button">C</button>
+            </div>
+
+            <div class="row">
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button">/</button>
+            </div>
+
+            <div class="row">
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button">*</button>
+            </div>
+
+            <div class="row">
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button">-</button>
+            </div>
+
+            <div class="row">
+                <button class="button">0</button>
+                <button class="button">.</button>
+                <button class="button">=</button>
+                <button class="button">+</button>
+            </div>
+
+           </div>
+
+
+
+
+
+    <div><br><br></div>
+
+</div>
+    
+
+                                      <!-- javascript -->
+ <script>
+    let string = "";
+     let buttons = document.querySelectorAll('.button');
+     Array.from(buttons).forEach((button)=>{
+        button.addEventListener('click',(e)=>{
+            if(e.target.innerHTML == '=') {
+                string= eval(string)
+                document.querySelector('input').value = string;
+
+            }
+            else if(e.target.innerHTML == 'C') {
+                string= "";
+                document.querySelector('input').value = string;
+
+            }
+            else{
+            console.log(e.target)
+            string= string + e.target.innerHTML;
+            document.querySelector('input').value = string;
+            }
+
+        })
+     })
+ </script>
+</body>
+
+</html>
